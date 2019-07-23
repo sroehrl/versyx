@@ -1,0 +1,30 @@
+{
+    "name": "chrisdevelops/py-monitor",
+    "authors": [
+        {
+            "name": "cversyx",
+            "email": "cmrowles@pm.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "src/Helpers/functions.php"
+        ]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "twig/twig": "^2.11",
+        "klein/klein": "^2.1",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^3.4",
+        "monolog/monolog": "^1.24",
+        "pimple/pimple": "^3.2",
+        "crowles/csv-exporter": "^1.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    }
+}
