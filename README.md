@@ -111,23 +111,7 @@ class HomeController extends Controller
 
 ## Views
 
-Versyx uses [Twig](https://twig.symfony.com/) to handle templating. Views typically extend from 'resources/views/layout.twig' and are structured like so:
-
-```twig
-{% extends 'layout.twig' %}
-
-{% block styles %}
-{% endblock %}
-
-{% block content %}
-    <div class="row">
-    ...
-    </div>
-{% endblock %}
-
-{% block scripts %}
-{% endblock %}
-```
+Versyx uses [Twig](https://twig.symfony.com/) to handle templating. Views typically extend from 'resources/views/layout.twig'.
 
 ## Routing
 
