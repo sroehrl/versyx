@@ -1,5 +1,16 @@
-# versyx-framework
+# versyx
 The framework behind [Versyx Digital](https://www.versyx.co.uk)
+
+## Table of contents
+
+* [Installation](#installation)
+* [Application Structure](#application-structure)
+* [Documentation](#documentation)
+  * [Services](#services)
+  * [Controllers](#controllers)
+  * [Views](#views)
+  * [Routing](#routing)
+* [Frontend](#frontend)
 
 # Installation
 
@@ -55,7 +66,7 @@ gulp compile
 └── README.md               # This file
 ```
 
-# Getting Started
+# Documentation
 
 ## Services
 
@@ -125,7 +136,7 @@ $app['router']->respond('GET', '/', function () use ($home) {
 });
 ```
 
-# Managing Assets
+# Frontend
 
 Versyx uses [npm](https://www.npmjs.com/) to manage front-end assets such as Bootstrap and jQuery, and [gulp](https://gulpjs.com/) to build and minify raw assets such as SASS, JS and other media.
 The existing tasks in `gulpfile.babel.js` shouldn't need to be touched, as all paths to assets are configured via `config/assets.json`:
