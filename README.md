@@ -7,12 +7,17 @@ To install, simply run:
 
 ```bash
 composer create-project raekw0n/versyx your-app
+cd your-app
+```
+
+Then, copy `.env.example` to `.env` and set your environment variables:
+```bash
+cp config/.env.example config/.env
 ```
 
 Then, install front-end assets:
 
 ```bash
-cd your-app
 npm install
 ```
 
