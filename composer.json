@@ -1,8 +1,10 @@
 {
-    "name": "chrisdevelops/py-monitor",
+    "name": "raekw0n/versyx",
+    "type": "project",
+    "license": "MIT",
     "authors": [
         {
-            "name": "cversyx",
+            "name": "Chris Rowles",
             "email": "cmrowles@pm.me"
         }
     ],
