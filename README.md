@@ -48,6 +48,7 @@ gulp compile
 │   ├── controllers.php     # Place to register application controllers
 │   ├── dependencies.php    # Place to register application dependencies
 │   └── routes.php          # Place to register application routes
+├── node_modules            # Reserved for NPM
 ├── public                  # Entry, web and cache files
 ├── resources               # Application resources
 │   ├── assets              # Raw, un-compiled assets such as media, SASS and JavaScript
@@ -57,12 +58,12 @@ gulp compile
 │   ├── Controller          # Application controllers
 │   ├── Helpers             # Application helpers
 ├── tests                   # Tests
-├── vendor                  # Reserved for composer
+├── vendor                  # Reserved for Composer
 ├── .babelrc                # Babel configuration
-├── composer.json           # Project dependencies
+├── composer.json           # Composer dependencies
 ├── gulpfile.babel.js       # Gulp configuration
 ├── LICENSE                 # The license
-├── package.json            # Project dependencies
+├── package.json            # NPM dependencies
 └── README.md               # This file
 ```
 
