@@ -26,13 +26,13 @@ Then, copy `.env.example` to `.env` and set your environment variables:
 cp config/.env.example config/.env
 ```
 
-Then, install front-end assets:
+Then, install the front-end dependencies:
 
 ```bash
 npm install
 ```
 
-Finally, compile raw assets:
+And finally, compile the raw assets:
 
 ```bash
 gulp compile
@@ -44,7 +44,7 @@ gulp compile
 ├── config                  # Configuration files
 │   ├── .env                # Environment variables
 │   ├── assets.json         # Front-end assets to compile
-│   ├── bootstrap.php       # Applicatiom bootstrapper
+│   ├── bootstrap.php       # Application bootstrapper
 │   ├── controllers.php     # Place to register application controllers
 │   ├── dependencies.php    # Place to register application dependencies
 │   └── routes.php          # Place to register application routes
@@ -70,7 +70,7 @@ gulp compile
 
 ## Services
 
-Versyx uses [Pimple](https://pimple.symfony.com/) to define its services. Services are registered in `config/dependencies.php`, for example, to register a logger instance:
+Versyx uses [Pimple](https://pimple.symfony.com/) to define application services. Services are registered in `config/dependencies.php`, for example, to register a logger instance:
 
 ```php
 $app = new Container();
@@ -122,7 +122,7 @@ class HomeController extends Controller
 
 ## Views
 
-Versyx uses [Twig](https://twig.symfony.com/) to handle templating. Views typically extend from 'resources/views/layout.twig'.
+Versyx uses [Twig](https://twig.symfony.com/) to handle templating. Views typically extend from `resources/views/layout.twig`.
 
 ## Routing
 
@@ -138,7 +138,7 @@ $app['router']->respond('GET', '/', function () use ($home) {
 
 # Frontend
 
-Versyx uses [npm](https://www.npmjs.com/) to manage front-end assets such as Bootstrap and jQuery, and [gulp](https://gulpjs.com/) to build and minify raw assets such as SASS, JS and other media.
+Versyx uses [npm](https://www.npmjs.com/) to manage front-end dependencies such as Bootstrap and jQuery, and [gulp](https://gulpjs.com/) to build and minify raw assets such as SASS, JS and other media.
 The existing tasks in `gulpfile.babel.js` shouldn't need to be touched, as all paths to assets are configured via `config/assets.json`:
 
 ```json
