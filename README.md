@@ -87,7 +87,7 @@ $app['log'] = function () {
 
 ## Controllers
 
-Application controllers are registered in `config/controllers.php`, the required services are also injected at instantiation:
+Application controllers are registered in `config/controllers.php`, as you can see, the `$app` application container itself is passed to the registered instance, this is so that we can use the application container to resolve any sub-dependencies of our controllers.
 
 ```php
 $controllers = [
@@ -97,7 +97,7 @@ $controllers = [
 return extract($controllers);
 ```
 
-Controllers must extend from the the abstract `Controller` class, which retrieves the required services and provides the following methods:
+Controllers must extend from the the abstract `Controller` class, which retrieves required sub-dependencies and provides the following methods:
 
 ```
 - viewData(array $data)                  - Adds data to pass to the view.
