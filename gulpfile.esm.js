@@ -61,4 +61,5 @@ function appScripts() {
         .pipe(dest(config.out + '/js'));
 }
 
+exports.images = images;
 exports.compile = series(images, fonts, vendorStyles, vendorScripts, appStyles, appScripts);

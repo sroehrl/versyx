@@ -1,7 +1,7 @@
 <?php
 
 use App\Api\Caller;
-use Klein\Klein;
+use Klein\Klein as Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Pimple\Container;
@@ -35,7 +35,7 @@ $app['view'] = function () {
 };
 
 $app['router'] = function () {
-    $router = new Klein();
+    $router = new Router();
 
     return $router;
 };
