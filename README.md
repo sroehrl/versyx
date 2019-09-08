@@ -1,3 +1,5 @@
+[![StyleCI](https://github.styleci.io/repos/198523139/shield?branch=master)](https://github.styleci.io/repos/198523139)
+
 # versyx
 The framework behind [Versyx Digital](https://www.versyx.co.uk)
 
