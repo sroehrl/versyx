@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 /**
  * Home controller class.
- *
- * @package App\Controllers
  */
 class HomeController extends Controller
 {
@@ -18,7 +16,7 @@ class HomeController extends Controller
      */
     public function view(array $data = [])
     {
-        $data['greeting'] = "Hello World!";
+        $data['greeting'] = 'Hello World!';
         $viewData = $this->viewData($data);
 
         return $this->render('home.twig', $viewData);

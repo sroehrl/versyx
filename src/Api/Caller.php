@@ -6,20 +6,20 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
- * Api caller class
+ * Api caller class.
  */
 class Caller
 {
-    /** @var Client Client  */
+    /** @var Client Client */
     private $client;
 
     /**
-     * Caller constructor
+     * Caller constructor.
      */
     public function __construct()
     {
         $this->client = new Client([
-            'base_uri' => env("API_URL")
+            'base_uri' => env('API_URL'),
         ]);
     }
 
@@ -33,9 +33,9 @@ class Caller
      */
     public function call(string $endpoint, string $method = 'GET')
     {
-        if (env("DEBUG") === true) {
-            $file = __DIR__ . '/../../tests/' . $endpoint . '.json';
-            if(file_exists($file)) {
+        if (env('DEBUG') === true) {
+            $file = __DIR__.'/../../tests/'.$endpoint.'.json';
+            if (file_exists($file)) {
                 return toArray(json_decode(file_get_contents($file)));
             } else {
                 return false;
@@ -43,7 +43,7 @@ class Caller
         }
 
         if (substr($endpoint, 0, 1) !== '/') {
-            $endpoint = '/' . $endpoint;
+            $endpoint = '/'.$endpoint;
         }
 
         try {
@@ -55,6 +55,7 @@ class Caller
             }
         } catch (GuzzleException $e) {
             echo $e->getMessage();
+
             return false;
         }
     }
