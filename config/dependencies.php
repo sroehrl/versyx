@@ -17,27 +17,31 @@ $app = new Container();
 $app['log'] = function () {
     $log = new Logger('app');
     $log->pushHandler(
-        new StreamHandler(__DIR__ . '/../logs/app.log', Logger::DEBUG)
+        new StreamHandler(__DIR__.'/../logs/app.log', Logger::DEBUG)
     );
+
     return $log;
 };
 
 $app['view'] = function () {
-    $loader = new FilesystemLoader(__DIR__ . '/../resources/views');
+    $loader = new FilesystemLoader(__DIR__.'/../resources/views');
     $view = new Environment($loader, [
-        'cache' => env("CACHE") ? __DIR__ . '/../public/cache' : env("CACHE"),
-        'debug' => env("DEBUG")
+        'cache' => env('CACHE') ? __DIR__.'/../public/cache' : env('CACHE'),
+        'debug' => env('DEBUG'),
     ]);
     $view->addExtension(new DebugExtension());
+
     return $view;
 };
 
 $app['router'] = function () {
     $router = new Klein();
+
     return $router;
 };
 
 $app['api'] = function () {
     $api = new Caller();
+
     return $api;
 };

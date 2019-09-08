@@ -6,11 +6,9 @@ use Pimple\Container;
 
 /**
  * Abstract base controller class.
- *
- * @package App\Controllers
  */
-abstract class Controller {
-
+abstract class Controller
+{
     /** @var mixed $api */
     protected $api;
 
@@ -61,7 +59,7 @@ abstract class Controller {
      * Renders templates with view data.
      *
      * @param string $template
-     * @param array $data
+     * @param array  $data
      *
      * @return mixed
      */

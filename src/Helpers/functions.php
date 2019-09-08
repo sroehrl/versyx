@@ -4,7 +4,8 @@ if (!function_exists('env')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
      *
-     * @param  string  $key
+     * @param string $key
+     *
      * @return mixed
      */
     function env($key)
@@ -23,10 +24,10 @@ if (!function_exists('env')) {
                 return '';
             case 'null':
             case '(null)':
-                return null;
+                return;
         }
 
-        if(substr($value, 0, 1) == '"' && substr($value, -1) == '"') {
+        if (substr($value, 0, 1) == '"' && substr($value, -1) == '"') {
             return substr($value, 1, -1);
         }
 
@@ -34,7 +35,7 @@ if (!function_exists('env')) {
     }
 }
 
-if(!function_exists('toArray')) {
+if (!function_exists('toArray')) {
     /**
      * Helper method to convert objects to arrays.
      *
@@ -42,10 +43,11 @@ if(!function_exists('toArray')) {
      *
      * @return array
      */
-    function toArray ($object)
+    function toArray($object)
     {
-        if(!is_object($object) && !is_array($object))
+        if (!is_object($object) && !is_array($object)) {
             return $object;
+        }
 
         return array_map('toArray', (array) $object);
     }
