@@ -50,7 +50,7 @@ gulp compile
 │   ├── controllers.php     # Place to register application controllers
 │   ├── dependencies.php    # Place to register application dependencies
 │   └── routes.php          # Place to register application routes
-├── node_modules            # Reserved for NPM
+├── node_modules            # Reserved for Yarn
 ├── public                  # Entry, web and cache files
 ├── resources               # Application resources
 │   ├── assets              # Raw, un-compiled assets such as media, SASS and JavaScript
@@ -65,7 +65,7 @@ gulp compile
 ├── composer.json           # Composer dependencies
 ├── gulpfile.babel.js       # Gulp configuration
 ├── LICENSE                 # The license
-├── package.json            # NPM dependencies
+├── package.json            # Yarn dependencies
 └── README.md               # This file
 ```
 
@@ -141,8 +141,8 @@ $app['router']->respond('GET', '/', function () use ($home) {
 
 # Frontend
 
-Versyx uses [npm](https://www.npmjs.com/) to manage front-end dependencies such as Bootstrap and jQuery, and [gulp](https://gulpjs.com/) to build and minify raw assets such as SASS, JS and other media.
-The existing tasks in `gulpfile.babel.js` shouldn't need to be touched, as all paths to assets are configured via `config/assets.json`:
+Versyx uses [Yarn](https://www.yarnpkg.com) to manage front-end dependencies such as Bootstrap and [gulp](https://gulpjs.com/) to build and minify raw assets such as SCSS, JS and other media.
+The existing tasks in `gulpfile.esm.js` shouldn't need to be touched, as all paths to assets are configured via `config/assets.json`:
 
 ```json
 {
@@ -188,25 +188,29 @@ Example gulp tasks:
 ```js
 import config from './config/assets';
 ...
-gulp.task('vendor-styles', () => {
-    return gulp.src(config.vendor.styles)
-        .pipe(plugin.sass({outputStyle: 'compressed'}))
-        .pipe(plugin.concat(config.vendor.css))
-        .pipe(gulp.dest(config.out + '/css'));
-});
+function vendorScripts() {
+    return src(config.vendor.scripts)
+        .pipe(plugin.sourcemaps.init())
+        .pipe(plugin.concat(config.vendor.js))
+        .pipe(plugin.sourcemaps.write('./'))
+        .pipe(dest(config.out + '/js'));
+}
 
-gulp.task('app-styles', () => {
-    return gulp.src(config.app.styles)
+function appStyles() {
+    return src(config.app.styles)
         .pipe(plugin.sass({outputStyle: 'compressed'}))
         .pipe(plugin.concat(config.app.css))
-        .pipe(gulp.dest(config.out + '/css'));
-});
+        .pipe(dest(config.out + '/css'));
+}
+...
+exports.images = images;
+exports.compile = series(images, fonts, vendorStyles, vendorScripts, appStyles, appScripts);
 ```
 
 To install and compile assets, run:
 
 ```bash
-npm install && gulp compile
+yarn && gulp compile
 ```
 
 # License
