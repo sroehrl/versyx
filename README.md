@@ -31,7 +31,7 @@ cp config/.env.example config/.env
 Then, install the front-end dependencies:
 
 ```bash
-npm install
+yarn
 ```
 
 And finally, compile the raw assets:
