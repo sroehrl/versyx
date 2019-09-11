@@ -39,9 +39,3 @@ $app['router'] = function () {
 
     return $router;
 };
-
-$app['api'] = function () {
-    $api = new Caller();
-
-    return $api;
-};

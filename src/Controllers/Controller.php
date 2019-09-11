@@ -9,9 +9,6 @@ use Pimple\Container;
  */
 abstract class Controller
 {
-    /** @var mixed $api */
-    protected $api;
-
     /** @var mixed $log */
     protected $log;
 
@@ -31,7 +28,6 @@ abstract class Controller
      */
     public function __construct(Container $container)
     {
-        $this->api = $container['api'];
         $this->log = $container['log'];
         $this->router = $container['router'];
         $this->view = $container['view'];

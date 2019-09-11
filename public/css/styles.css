@@ -403,6 +403,17 @@ h6.kinda-small {
     font-weight: 400;
 }
 
+.love {
+    background-image: url(../images/heart-icon.svg);
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    position: relative;
+    top: -2px;
+}
+
 /**
  * Logos & Icons
  */

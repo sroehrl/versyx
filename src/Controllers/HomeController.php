@@ -16,9 +16,6 @@ class HomeController extends Controller
      */
     public function view(array $data = [])
     {
-        $data['greeting'] = 'Hello World!';
-        $viewData = $this->viewData($data);
-
-        return $this->render('home.twig', $viewData);
+        return $this->render('home.twig', $data);
     }
 }
