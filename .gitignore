@@ -1,12 +1,6 @@
 /.idea
 /node_modules
 /vendor
-/public/cache/*
-!/public/cache/README.md
-/public/css/*
-/public/js/*
-/public/webfonts/*
-/public/media/*
 /config/.env
 /logs/*
 !/logs/README.md
