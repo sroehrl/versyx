@@ -8,7 +8,6 @@ require __DIR__.'/../vendor/autoload.php';
 /*----------------------------------------
  | Load environment variables             |
  ----------------------------------------*/
- 
 
 /*----------------------------------------
  | Load application dependencies          |
