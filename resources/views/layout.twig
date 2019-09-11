@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    {# <base href="/"/> #}
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <title>{{ title }}</title>
-    <meta http-equiv="refresh" content="300">
-
-    <link rel="stylesheet" href="css/bundle.min.css">
-    <link rel="stylesheet" href="css/app.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:200,400,700" rel="stylesheet">
-    {% block styles %}
-    {% endblock %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css">
+    <link rel="stylesheet" href="/css/pure.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    {% block assets %}{% endblock %}
 </head>
 <body>
-<div class="d-flex toggled" id="wrapper">
-    <div class="bg-dark text-light border-right-0" id="sidebar-wrapper">
-        <div class="sidebar-heading">{{ title }}
-        </div>
-        <div class="list-group list-group-flush">
-        </div>
-    </div>
-    <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="btn btn-sm text-light" id="menu-toggle"><i class="fas fa fa-2x fa-bars"></i></button>
-            <div class="navbar ml-auto">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container my-5">
-            {% block content %}
-            {% endblock %}
-        </div>
+<div class="header">
+    <div class="container clearfix">
+        <a href="/"><div id="logo"> CR </div></a>
+
+        <ul class="contact">
+            <li><a href="https://www.twitter.com/cmrowles"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/chrisdevelops"><i class="fab fa-github"></i></a></li>
+            <li><a href="mailto:me@rowles.ch"><i class="fa fa-envelope"></i></a></li>
+        </ul>
     </div>
 </div>
-<script type="text/javascript" src="js/bundle.min.js"></script>
-<script type="text/javascript" src="js/app.min.js"></script>
-<script>
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
-{% block scripts %}
-{% endblock %}
+<div class="clear-float"></div>
+
+<div id="content-wrapper">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+<div id="footer">
+    Made with <span class="love"></span> by CR
+</div>
 </body>
 </html>

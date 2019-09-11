@@ -1,15 +1,82 @@
-{% extends 'layout.twig' %}
+{% extends "layout.twig" %}
 
-{% block styles %}
+{% block assets %}
 {% endblock %}
 
 {% block content %}
-    <div class="row my-5">
-        <div class="col-md-12">
-            <h1>{{ greeting }}</h1>
+    <div id="content" class="container">
+        <div id="splash">
+            <h1 id="main_heading">Chris Rowles</h1>
+            <h3 id="main_subheading">Software Developer based in Bedfordshire, United Kingdom.</h3>
+        </div>
+
+        <div class="blurb">
+            <div class="blurb-header">About</div>
+            <div class="blurb-content" id="main_about">
+                Hi, I'm Chris, I build attractive, scalable and resilient web solutions.<br>I help businesses &amp; individuals realise ideas using creative technological approaches.
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-3-5 collapse-one">
+                <div class="blurb">
+                    <div class="blurb-header">Current</div>
+                    <div class="blurb-content">
+                        <h4 class="somewhat-big" id="current_employer">
+                            TownsWeb Archiving
+                        </h4>
+                        <h6 class="kinda-small" id="current_position">
+                            Senior Software Developer
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="blurb">
+                    <div class="blurb-header">Previous</div>
+                    <div class="blurb-content">
+                        <h4 class="somewhat-big">Sodexo <span class="sub-header">(2017 - 2019)</span></h4>
+                        <h6 class="kinda-small">Full Stack Developer</h6>
+                        <h4 class="somewhat-big">Market Force <span class="sub-header">(2015 - 2017)</span></h4>
+                        <h6 class="kinda-small">Developer</h6>
+                        <h4 class="somewhat-big">Fastbolt <span class="sub-header">(2014 - 2015)</span></h4>
+                        <h6 class="kinda-small">Systems Administrator</h6>
+                        <h4 class="somewhat-big">Fastbolt <span class="sub-header">(2012 -2014)</span></h4>
+                        <h6 class="kinda-small">Junior Systems Administrator</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-2-5 collapse-three">
+                <div class="blurb">
+                    <div class="blurb-header">Contact</div>
+                    <div class="blurb-content">
+                        <h4 class="somewhat-big">Email</h4>
+                        <h6 class="kinda-small" id="site_email"><a href="mailto:me@rowles.ch">me@rowles.ch</a>
+                        </h6>
+                        <h4 class="somewhat-big">Phone</h4>
+                        <h6 class="kinda-small" id="site_telephone"><a href="tel:+44(0)75222 66 722">+44(0)75222 66 722</a>
+                        </h6>
+                        <h4 class="somewhat-big">GitHub</h4>
+                        <h6 class="kinda-small" id="social_github"><a href="https://github.com/raekw0n">https://github.com/raekw0n</a></h6>
+                        <h4 class="somewhat-big">Twitter</h4>
+                        <h6 class="kinda-small" id="social_twitter"><a href="https://twitter.com/cmrowles">https://twitter.com/cmrowles</a></h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-u-1 pure-u-md-3-5 collapse-two">
+                <div class="blurb">
+                    <div class="blurb-header">Open Source</div>
+                    <div class="blurb-content">
+                        <a href="https://versyx-digital.github.io/versyx" target="_blank">Versyx Framework</a>
+                        <a href="https://versyx-digital.github.io/codepad" target="_blank">PHP Codepad</a>
+                        <a href="https://github.com/versyx-digital/pi-monitor-api" target="_blank">Pi Monitor API</a>
+                        <a href="https://github.com/versyx-digital/pi-monitor" target="_blank">Pi Monitor Client</a>
+                        <a href="https://github.com/raekw0n/laravel-filebrowser" target="_blank">Laravel Filebrowser</a>
+                        <a href="https://github.com/raekw0n/laravel-sagepay" target="_blank">Laravel SagePay</a>
+                        <a href="https://github.com/raekw0n/csv-exporter" target="_blank">CSV Exporter</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-{% endblock %}
-
-{% block scripts %}
 {% endblock %}
