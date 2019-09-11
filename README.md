@@ -229,10 +229,10 @@ exports.assets = parallel(fonts, styles, scripts);
 exports.build  = series(images, fonts, styles, scripts);
 ```
 
-To install and compile assets, run:
+To install and build assets, run:
 
 ```bash
-yarn && gulp compile
+$ yarn
 ```
 
 # License
