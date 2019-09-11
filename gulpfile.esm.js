@@ -5,8 +5,9 @@
  * @author Chris Rowles <me@rowles.ch>
  */
 import config from './config/assets';
-import { src, dest, series } from 'gulp';
+import { src, dest, parallel, series } from 'gulp';
 import plugins from 'gulp-load-plugins';
+
 const plugin = plugins();
 
 function images() {
@@ -30,36 +31,42 @@ function fonts() {
         .pipe(dest(config.out + '/webfonts'));
 }
 
-function vendorStyles() {
-    return src(config.vendor.styles)
+function styles(cb) {
+    src(config.vendor.styles)
         .pipe(plugin.sass({outputStyle: 'compressed'}))
         .pipe(plugin.concat(config.vendor.css))
         .pipe(dest(config.out + '/css'));
+
+    src(config.app.styles)
+        .pipe(plugin.sass({outputStyle: 'compressed'}))
+        .pipe(plugin.concat(config.app.css))
+        .pipe(dest(config.out + '/css'));
+
+    cb();
 }
 
-function vendorScripts() {
-    return src(config.vendor.scripts)
+function scripts(cb) {
+    
+    src(config.vendor.scripts)
         .pipe(plugin.sourcemaps.init())
         .pipe(plugin.concat(config.vendor.js))
         .pipe(plugin.sourcemaps.write('./'))
         .pipe(dest(config.out + '/js'));
-}
 
-function appStyles() {
-    return src(config.app.styles)
-        .pipe(plugin.sass({outputStyle: 'compressed'}))
-        .pipe(plugin.concat(config.app.css))
-        .pipe(dest(config.out + '/css'));
-}
-
-function appScripts() {
-    return src(config.app.scripts)
+    src(config.app.scripts)
         .pipe(plugin.rename(config.app.js))
         .pipe(plugin.sourcemaps.init())
         .pipe(plugin.uglifyEs.default())
         .pipe(plugin.sourcemaps.write('./'))
         .pipe(dest(config.out + '/js'));
+
+    cb();
 }
 
-exports.images = images;
-exports.compile = series(images, fonts, vendorStyles, vendorScripts, appStyles, appScripts);
+exports.fonts   = fonts;
+exports.images  = images;
+exports.styles  = styles;
+exports.scripts = scripts;
+
+exports.assets = parallel(fonts, styles, scripts);
+exports.build  = series(images, fonts, styles, scripts);
