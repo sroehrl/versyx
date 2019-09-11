@@ -8,9 +8,6 @@ require __DIR__.'/../vendor/autoload.php';
 /*----------------------------------------
  | Load environment variables             |
  ----------------------------------------*/
-if (getenv("APP_ENV") != "HEROKU") {
-    $dotenv = Dotenv\Dotenv::create(__DIR__)->load();
-}
 
 /*----------------------------------------
  | Load application dependencies          |
