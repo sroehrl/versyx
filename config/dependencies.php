@@ -1,6 +1,5 @@
 <?php
 
-use App\Api\Caller;
 use Klein\Klein as Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
