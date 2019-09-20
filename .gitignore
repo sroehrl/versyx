@@ -10,3 +10,4 @@
 /config/.env
 /logs/*
 !/logs/README.md
+/profile
