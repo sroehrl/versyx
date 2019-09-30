@@ -9,6 +9,10 @@ use Pimple\Container;
  */
 abstract class Controller
 {
+
+    /** @var mixed $db */
+    protected $db;
+
     /** @var mixed $api */
     protected $api;
 
@@ -31,6 +35,7 @@ abstract class Controller
      */
     public function __construct(Container $container)
     {
+        $this->db = $container['database'];
         $this->api = $container['api'];
         $this->log = $container['log'];
         $this->router = $container['router'];

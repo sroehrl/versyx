@@ -1,5 +1,6 @@
 <?php
 
+use App\Core\Database\DatabaseManager;
 use App\Api\Caller;
 use Klein\Klein as Router;
 use Monolog\Handler\StreamHandler;
@@ -44,4 +45,11 @@ $app['api'] = function () {
     $api = new Caller();
 
     return $api;
+};
+
+$app['database']  = function()
+{
+    $database = new DatabaseManager();
+
+    return $database;
 };

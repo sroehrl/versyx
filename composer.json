@@ -24,7 +24,7 @@
         "vlucas/phpdotenv": "^3.4",
         "monolog/monolog": "^1.24",
         "pimple/pimple": "^3.2",
-        "crowles/csv-exporter": "^1.0"
+        "ext-pdo": "*"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.3"
